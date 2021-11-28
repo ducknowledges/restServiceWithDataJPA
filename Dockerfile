@@ -13,4 +13,4 @@ RUN mkdir /app
 
 COPY --from=build /home/gradle/src/build/libs/*.jar /app/
 
-ENTRYPOINT ["java", "-jar","/app/service-0.0.1.jar"]
+ENTRYPOINT ["java", "-jar","/app/serviceDataJPA-0.0.1.jar"]
