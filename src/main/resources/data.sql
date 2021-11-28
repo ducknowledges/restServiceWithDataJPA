@@ -1,0 +1,14 @@
+INSERT INTO public.users (name, age) VALUES('Павел', 25);
+INSERT INTO public.users (name, age) VALUES('Дарья', 17);
+INSERT INTO public.users (name, age) VALUES('Иван', 26);
+INSERT INTO public.users (name, age) VALUES('Андрей', 30);
+INSERT INTO public.users (name, age) VALUES('Сергей', 40);
+INSERT INTO public.users (name, age) VALUES('Михаил', 15);
+INSERT INTO public.users (name, age) VALUES('Анна', 20);
+INSERT INTO public.users (name, age) VALUES('Юлия', 34);
+INSERT INTO public.users (name, age) VALUES('Александр', 16);
+INSERT INTO public.users (name, age) VALUES('Кристина', 19);
+INSERT INTO public.users (name, age) VALUES('Степан', 45);
+INSERT INTO public.users (name, age) VALUES('Кузьма', 60);
+INSERT INTO public.users (name, age) VALUES('Алена', 38);
+INSERT INTO public.users (name, age) VALUES('Евгений', 11);
