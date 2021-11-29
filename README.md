@@ -1,6 +1,6 @@
-# Spring Boot Rest API
+# Spring Boot Rest API 
 
-Implementation simple REST API service with CRUD on spring boot using PostgreSQL
+Implementation simple REST API service with Spring Data JPA CRUD on spring boot using PostgreSQL
 
 ## Challenge
 
@@ -12,7 +12,7 @@ Service functions, from the table of users:
 - adding a new user;
 - deleting a user by id;
 
-Table `Uers`:
+Table `Users`:
 
 id | name      | age
 :--| :---------| :---
@@ -32,7 +32,7 @@ id | name      | age
 14 | Евгений   | 11
 
 ## Using technologies
-`Spring Boot`, `Spring Data JDBC`, `PostgreSQL`, `Docker`, `Docker compose`
+`Spring Boot`, `Spring Data JPA`, `PostgreSQL`, `Docker`, `Docker compose`
 
 ## For run and test you need
 `Git`, `Docker`, `Docker compose`, `Postman`
@@ -68,3 +68,4 @@ After `docker-compose up` command using bellow request examples:
 - get users in ascending age from X to Y `GET http://localhost:8080/api/users/age?from=20&to=50`;
 - adding a new user `POST http://localhost:8080/api/users?name=Alice&age=7`;
 - deleting a user by id `DELETE http://localhost:8080/api/users/{id}`;
+
