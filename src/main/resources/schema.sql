@@ -1,5 +1,5 @@
 CREATE TABLE IF NOT EXISTS public.users (
-	id 		serial4 NOT NULL,
-	"name" 	varchar NOT NULL,
-	age 	int4 	NOT NULL
+	id 		SERIAL      PRIMARY KEY NOT NULL,
+	name 	VARCHAR     NOT NULL,
+	age 	INTEGER     NOT NULL
 );
