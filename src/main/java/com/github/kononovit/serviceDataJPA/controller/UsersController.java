@@ -1,31 +1,32 @@
-package com.github.kononovit.service.controller;
+package com.github.kononovit.serviceDataJPA.controller;
 
-import com.github.kononovit.service.dao.UserDAO;
-import com.github.kononovit.service.models.User;
+import com.github.kononovit.serviceDataJPA.models.User;
+import com.github.kononovit.serviceDataJPA.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 @RequestMapping("/api/users")
 public class UsersController {
 
-    private UserDAO userDAO;
+    private UserRepository repository;
 
     @Autowired
-    public UsersController(UserDAO userDAO) {
-        this.userDAO = userDAO;
+    public UsersController(UserRepository repository) {
+        this.repository = repository;
     }
 
     @GetMapping()
     public List<User> getUsers() {
-        return userDAO.getUsers();
+        return repository.findAll();
     }
 
     @GetMapping("/{id}")
-    public User getUserBy(@PathVariable int id) {
-        return userDAO.getUserBy(id);
+    public Optional<User> getUserById(@PathVariable Integer id) {
+        return repository.findById(id);
     }
 
     @GetMapping("/age")
@@ -33,16 +34,17 @@ public class UsersController {
         int younger = Math.min(from, to);
         int older = Math.max(from, to);
 
-        return userDAO.getUsersByAscAge(younger, older);
+        return repository.findByAgeRange(younger, older);
     }
 
     @PostMapping()
     public void createUser(@RequestParam String name, @RequestParam int age) {
-        userDAO.crateUser(new User(name, age));
+        User user = new User(name, age);
+        repository.save(user);
     }
 
     @DeleteMapping("/{id}")
     public void deleteUser(@PathVariable int id) {
-        userDAO.deleteUserBy(id);
+        repository.deleteById(id);
     }
 }
