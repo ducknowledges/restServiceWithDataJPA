@@ -1,4 +1,4 @@
-package com.github.kononovit.service;
+package com.github.kononovit.serviceDataJPA;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
